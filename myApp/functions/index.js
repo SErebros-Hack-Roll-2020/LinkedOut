@@ -44,12 +44,12 @@ exports.getLobby = functions.https.onRequest(async (request, response) => {
     let groupsResult = await db.collection(LOBBIES).doc(lobbyName).collection(GROUPS).get();
     let res = {}
     res[PERSONS] = {}
-    res[GROUPS] = {}
+    res[GROUPS] = []
     personsResult.forEach(doc => {
         res[PERSONS][doc.id] = doc.data()
     })
     groupsResult.forEach(doc => {
-        res[GROUPS][doc.id] = doc.data()
+        res[GROUPS].append(doc.data())
     })
     return response.status(200).send(res)
 })
