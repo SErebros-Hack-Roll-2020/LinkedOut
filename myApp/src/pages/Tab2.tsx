@@ -1,6 +1,26 @@
 import React from 'react';
-import { IonHeader, IonGrid, IonRow, IonCol, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonIcon, IonItem, IonLabel } from '@ionic/react';
+import {
+    IonHeader,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonList,
+    IonPage,
+    IonTitle,
+    IonToolbar
+} from '@ionic/react';
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonContent,
+    IonIcon,
+    IonItem,
+    IonLabel
+} from '@ionic/react';
 
 const Tab2: React.FC = () => {
 

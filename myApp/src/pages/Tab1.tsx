@@ -6,6 +6,16 @@ import {
     IonCardHeader,
     IonCardSubtitle,
     IonCardTitle,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import React, { useState, useEffect } from 'react';
@@ -13,19 +23,19 @@ import './Tab1.css';
 import axios from 'axios';
 
 const Tab1: React.FC = () => {
-  const settings = () => {
-    console.log("hi");
-  };
+    const settings = () => {
+        console.log('hi');
+    };
 
-  const addMedia = () => {
-    console.log("hi");
-  };
+    const addMedia = () => {
+        console.log('hi');
+    };
 
-  const editInfo = () => {
-    console.log("hi");
-  };
+    const editInfo = () => {
+        console.log('edit info');
+    };
 
-  const [name, setName] = useState("name");
+    const remove = () => {
         console.log('remove');
     };
 
