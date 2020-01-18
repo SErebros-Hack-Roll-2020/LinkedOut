@@ -12,6 +12,10 @@
     ],
     "rewrites": [
       {
+        "source": "/api/getName",
+        "function": "getName"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
