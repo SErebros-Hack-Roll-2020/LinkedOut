@@ -45,11 +45,15 @@ exports.getLobby = functions.https.onRequest(async (request, response) => {
     let res = {}
     res[PERSONS] = {}
     res[GROUPS] = []
+    res['groups_list'] = []
     personsResult.forEach(doc => {
         res[PERSONS][doc.id] = doc.data()
     })
     groupsResult.forEach(doc => {
         res[GROUPS].append(doc.data())
+    })
+    groupsResult.forEach(doc => {
+        res['groups_list'].append(doc.data())
     })
     return response.status(200).send(res)
 })
