@@ -57,5 +57,5 @@ const Tab1: React.FC = () => {
     </IonPage>
   );
 };
-
 export default Tab1;
+

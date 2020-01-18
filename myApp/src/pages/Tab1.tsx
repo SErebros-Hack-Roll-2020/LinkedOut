@@ -1,21 +1,21 @@
 import {
-  IonCard,
-  IonCol,
-  IonButton,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar
+    IonCard,
+    IonCol,
+    IonButton,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import React, { useState, useEffect } from 'react';
@@ -23,81 +23,123 @@ import './Tab1.css';
 import axios from 'axios';
 
 const Tab1: React.FC = () => {
-<<<<<<< HEAD
-  const settings = () => {
-    console.log("hi");
-  };
+    const settings = () => {
+        console.log('hi');
+    };
 
-  const addMedia = () => {
-    console.log("hi");
-  };
+    const addMedia = () => {
+        console.log('hi');
+    };
 
-  const editInfo = () => {
-    console.log("hi");
-  };
+    const editInfo = () => {
+        console.log('edit info');
+    };
 
-=======
+    const remove = () => {
+        console.log('remove');
+    };
 
-  const [name, setName] = useState("name");
+    const [name, setName] = useState('name');
 
-  const getName = () => {
-    axios.get('/api/getName')
-      .then(response => {
-        console.log(response);
-        setName(response.data);
-      })
-  };
+    const getName = () => {
+        axios.get('/api/getName').then(response => {
+            console.log(response);
+            setName(response.data);
+        });
+    };
 
-  useEffect(() => {
-    getName();
-  }, []);
+    useEffect(() => {
+        getName();
+    }, []);
 
+    const state = {
+        userData: { id: '1', name: 'Chen Hui', bio: 'D' },
+        groupData: [
+            { id: '1', name: 'Jason', bio: 'Developer' },
+            { id: '2', name: 'Subbash', bio: 'Designer' }
+        ]
+    };
 
->>>>>>> d6a92ce15ed14d01280ad36908df9292e0f65627
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Profile</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonCard className="welcome-card">
-          <img src="/assets/icon/HumanIcon.png" alt="" />
-          <IonCardHeader>
-<<<<<<< HEAD
-            <IonCardTitle>Group 01</IonCardTitle>
-            <IonCardSubtitle>Chen Hui</IonCardSubtitle>
-            <IonCardSubtitle>Subbash</IonCardSubtitle>
-=======
-            <IonCardTitle>{name}</IonCardTitle>
->>>>>>> d6a92ce15ed14d01280ad36908df9292e0f65627
-          </IonCardHeader>
-        </IonCard>
+    const renderItems = () => {
+        const data = state.groupData;
 
-        <IonList lines="none">
-          <IonListHeader>
-            <IonCol>
-              <IonButton onClick={() => settings()} color="success">Settings</IonButton>
-            </IonCol>
-            <IonCol>
-              <IonButton onClick={() => addMedia()} color="success">Add Media</IonButton>
-            </IonCol>
-            <IonCol>
-            <IonButton onClick={() => editInfo()} color="success">Edit info</IonButton>
-            </IonCol>
-          </IonListHeader>
-<<<<<<< HEAD
-=======
-          <IonItem href="https://ionicframework.com/docs/" target="_blank">
-            <IonIcon slot="start" color="medium" icon={book} />
-            <IonLabel>Ionic Documentation</IonLabel>
-          </IonItem>
->>>>>>> d6a92ce15ed14d01280ad36908df9292e0f65627
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
+        const mapRows = data.map((item, index) => (
+            <IonCard>
+                <IonItem>
+                    <IonCol>
+                        <IonCardTitle>Name: {item.name}</IonCardTitle>
+                    </IonCol>
+                    <IonCol>
+                        <IonButton onClick={() => remove()} color="danger">
+                            Remove
+                        </IonButton>
+                    </IonCol>
+                </IonItem>
+                <IonCardContent> Bio: {state.userData.bio}</IonCardContent>
+            </IonCard>
+        ));
+        return mapRows;
+    };
+
+    return (
+        <IonPage>
+            <IonHeader>
+                <IonToolbar>
+                    <IonTitle>Profile</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent>
+                <IonCard className="welcome-card">
+                    <img src="/assets/icon/HumanIcon.png" alt="" />
+                    <IonItem>
+                        <IonCol>
+                            <IonCardTitle>Name: {name}</IonCardTitle>
+                        </IonCol>
+                        <IonCol>
+                            <IonButton
+                                onClick={() => editInfo()}
+                                color="success"
+                            >
+                                Edit info
+                            </IonButton>
+                        </IonCol>
+                    </IonItem>
+                    <IonCardContent> Bio: {state.userData.bio}</IonCardContent>
+                </IonCard>
+
+                <IonList>{renderItems()}</IonList>
+
+                <IonList lines="none">
+                    <IonListHeader>
+                        <IonCol>
+                            <IonButton
+                                onClick={() => settings()}
+                                color="success"
+                            >
+                                Settings
+                            </IonButton>
+                        </IonCol>
+                        <IonCol>
+                            <IonButton
+                                onClick={() => addMedia()}
+                                color="success"
+                            >
+                                Add Media
+                            </IonButton>
+                        </IonCol>
+                        <IonCol>
+                            <IonButton
+                                onClick={() => editInfo()}
+                                color="success"
+                            >
+                                Edit info
+                            </IonButton>
+                        </IonCol>
+                    </IonListHeader>
+                </IonList>
+            </IonContent>
+        </IonPage>
+    );
 };
 
 export default Tab1;
