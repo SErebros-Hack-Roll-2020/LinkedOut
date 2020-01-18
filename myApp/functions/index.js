@@ -67,6 +67,11 @@ exports.joinLobby = functions.https.onRequest(async (request, response) => {
         memberIds: [uid],
         likedGroupIds: []
     }
+
+    lobbySnap = await db.collection(LOBBIES).doc(lobbyName).get()
+    if (!lobbySnap.exists) {
+        return response.status(201).send('lobby doesn\'t exist')
+    }
     docRef = await db.collection(LOBBIES).doc(lobbyName).collection(GROUPS).add(group)
 
     const user = {
