@@ -31,15 +31,8 @@ const Tab1: React.FC = () => {
         <IonCard className="welcome-card">
           <img src="/assets/shapes.svg" alt="" />
           <IonCardHeader>
-            <IonCardSubtitle>Get Started</IonCardSubtitle>
-            <IonCardTitle>Welcome to Ionic</IonCardTitle>
+            <IonCardTitle>Profile</IonCardTitle>
           </IonCardHeader>
-          <IonCardContent>
-            <p>
-              Now that your app has been created, you'll want to start building out features and
-              components. Check out some of the resources below for next steps.
-            </p>
-          </IonCardContent>
         </IonCard>
 
         <IonList lines="none">
