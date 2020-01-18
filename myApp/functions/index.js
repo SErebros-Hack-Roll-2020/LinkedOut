@@ -55,6 +55,7 @@ exports.getLobby = functions.https.onRequest(async (request, response) => {
 })
 
 // POST(uid, name, bio, telegram, lobby)
+// 201 if lobby doesn't exist, 200 if successful
 exports.joinLobby = functions.https.onRequest(async (request, response) => {
     const uid = request.body.uid
     const name = request.body.name
