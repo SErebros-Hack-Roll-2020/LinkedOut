@@ -16,6 +16,10 @@
         "function": "getName"
       },
       {
+        "source": "/api/createLobby",
+        "function": "createLobby"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
