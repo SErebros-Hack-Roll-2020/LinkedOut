@@ -1,7 +1,6 @@
 import {
   IonCard,
   IonCol,
-  IonButton,
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
@@ -18,37 +17,10 @@ import {
   IonToolbar
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Tab1.css';
-import axios from 'axios';
 
 const Tab1: React.FC = () => {
-  const settings = () => {
-    console.log("hi");
-  };
-
-  const addMedia = () => {
-    console.log("hi");
-  };
-
-  const editInfo = () => {
-    console.log("hi");
-  };
-
-  const [name, setName] = useState("name");
-
-  const getName = () => {
-    axios.get('/api/getName')
-      .then(response => {
-        console.log(response);
-        setName(response.data);
-      })
-  };
-
-  useEffect(() => {
-    getName();
-  }, []);
-
   return (
     <IonPage>
       <IonHeader>
@@ -57,29 +29,33 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonCard className="welcome-card">
+        <IonCard className="LOBBY">
           <img src="/assets/icon/HumanIcon.png" alt="" />
           <IonCardHeader>
-            <IonCardTitle>{name}</IonCardTitle>
+            <IonCardTitle>Chen Hui</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 
         <IonList lines="none">
           <IonListHeader>
             <IonCol>
-              <IonButton onClick={() => settings()} color="success">Settings</IonButton>
+              <IonLabel>Settings</IonLabel>
             </IonCol>
             <IonCol>
-              <IonButton onClick={() => addMedia()} color="success">Add Media</IonButton>
+              <IonLabel>Add Media</IonLabel>
             </IonCol>
             <IonCol>
-            <IonButton onClick={() => editInfo()} color="success">Edit info</IonButton>
+              <IonLabel>Edit Info</IonLabel>
             </IonCol>
           </IonListHeader>
-        </IonList>
+          <IonItem href="https://ionicframework.com/docs/" target="_blank">
+            <IonIcon slot="start" color="medium" icon={book} />
+            <IonLabel>Ionic Documentation</IonLabel>
+          </IonItem>
+         </IonList>
       </IonContent>
     </IonPage>
   );
 };
-
 export default Tab1;
+
