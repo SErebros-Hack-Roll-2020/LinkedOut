@@ -10,7 +10,7 @@ import 'firebase/auth';
 import { getConfig } from '@ionic/react';
 
 const firebaseConfig= {
-    apiKey: "",
+    apiKey: "AIzaSyB0iWQh9lOS5F9NsqN65y7chGxUJ_Fge8Q",
     authDomain: "linkedout-df9d4.firebaseapp.com",
     databaseURL: "https://linkedout-df9d4.firebaseio.com",
     projectId: "linkedout-df9d4",
