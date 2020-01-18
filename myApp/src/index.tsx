@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Landing from './Landing';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -27,23 +28,8 @@ firebase.auth().onAuthStateChanged((user) => {
         // user exists, do stuff
         ReactDOM.render(<App />, document.getElementById('root'));
     } else {
-        // no user
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var credential = result.credential as firebase.auth.OAuthCredential
-            var token = credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-            console.log(user)
-          }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-          });
+        ReactDOM.render(<Landing />, document.getElementById('root'));
+
     }
 });
 
