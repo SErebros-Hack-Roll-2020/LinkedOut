@@ -1,7 +1,6 @@
 import {
   IonCard,
   IonCol,
-  IonButton,
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
@@ -22,18 +21,6 @@ import React from 'react';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
-  const settings = () => {
-    console.log("hi");
-  };
-
-  const addMedia = () => {
-    console.log("hi");
-  };
-
-  const editInfo = () => {
-    console.log("hi");
-  };
-
   return (
     <IonPage>
       <IonHeader>
@@ -42,28 +29,30 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonCard className="welcome-card">
+        <IonCard className="LOBBY">
           <img src="/assets/icon/HumanIcon.png" alt="" />
           <IonCardHeader>
-            <IonCardTitle>Group 01</IonCardTitle>
-            <IonCardSubtitle>Chen Hui</IonCardSubtitle>
-            <IonCardSubtitle>Subbash</IonCardSubtitle>
+            <IonCardTitle>Chen Hui</IonCardTitle>
           </IonCardHeader>
         </IonCard>
 
         <IonList lines="none">
           <IonListHeader>
             <IonCol>
-              <IonButton onClick={() => settings()} color="success">Settings</IonButton>
+              <IonLabel>Settings</IonLabel>
             </IonCol>
             <IonCol>
-              <IonButton onClick={() => addMedia()} color="success">Add Media</IonButton>
+              <IonLabel>Add Media</IonLabel>
             </IonCol>
             <IonCol>
-            <IonButton onClick={() => editInfo()} color="success">Edit info</IonButton>
+              <IonLabel>Edit Info</IonLabel>
             </IonCol>
           </IonListHeader>
-        </IonList>
+          <IonItem href="https://ionicframework.com/docs/" target="_blank">
+            <IonIcon slot="start" color="medium" icon={book} />
+            <IonLabel>Ionic Documentation</IonLabel>
+          </IonItem>
+         </IonList>
       </IonContent>
     </IonPage>
   );
